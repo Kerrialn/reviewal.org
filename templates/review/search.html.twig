@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}new address{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        {{ 'review-search'|trans }}
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(addressFilterForm) }}
+                        <div class="row">
+                            <div class="col-9">
+                                {{ form_row(addressFilterForm.nameOrNumber) }}
+                            </div>
+                            <div class="col-3">
+                                {{ form_row(addressFilterForm.floor) }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(addressFilterForm.lineOne) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(addressFilterForm.lineTwo) }}
+                            </div>
+                        </div>
+                        {{ form_row(addressFilterForm.postcode) }}
+                        {{ form_row(addressFilterForm.city) }}
+                        <div class="row">
+                            <div class="col-6">
+                                {{ form_row(addressFilterForm.county) }}
+                            </div>
+                            <div class="col-6">
+                                {{ form_row(addressFilterForm.country) }}
+                            </div>
+                        </div>
+
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary w-100">
+                                {{ 'search'|trans }}
+                            </button>
+                        </div>
+                        {{ form_end(addressFilterForm) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8">
+                {% for address in addresses %}
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <div class="h1 fw-bold lh-1">
+                                            {{ address.nameOrNumber }},
+                                            {{ 'floor'|trans }} {{ address.floor }},
+                                            {{ address.lineOne }},
+                                            {{ address.lineTwo ? address.lineTwo ~ ',' : '' }}
+                                            {{ address.postcode }},
+                                            {{ address.county }},
+                                            {{ address.country|country_name }}
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>{{ 'last-reviewed'|trans }} {{ address.mostRecentReviewAt|date('Y') }}</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="h1 fw-bold lh-1">
+                                        <span
+                                            class="badge rounded-pill text-bg-primary">{{ address.reviews.count }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{{ path('address_show', {id: address.id}) }}" class="stretched-link"></a>
+                    </div>
+                {% else %}
+                    <div class="text-center text-muted h1 fw-bold">{{ 'no-reviews-found'|trans }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{{ form_start(addressForm) }}
+<div class="row">
+    <div class="col-12 col-md-6">
+        {{ form_row(addressForm.nameOrNumber) }}
+        {{ form_row(addressForm.postcode) }}
+    </div>
+    <div class="col-12 col-md-6">
+        {{ form_row(addressForm.city) }}
+        {{ form_row(addressForm.county) }}
+    </div>
+    <div class="col-12">
+        {{ form_row(addressForm.lineOne) }}
+        {{ form_row(addressForm.lineTwo) }}
+        {{ form_row(addressForm.country) }}
+    </div>
+</div>
+<div class="text-end">
+    <button type="submit" class="btn btn-primary">{{ 'save'|trans }}</button>
+</div>
+{{ form_end(addressForm) }}

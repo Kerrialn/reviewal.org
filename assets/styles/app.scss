@@ -1,0 +1,8 @@
+@import "~@mdi/font";
+@import "lumen/_variables.scss";
+@import "bootstrap/scss/bootstrap";
+@import "lumen/_bootswatch.scss";
+
+body {
+    background-color: $gray-100;
+}

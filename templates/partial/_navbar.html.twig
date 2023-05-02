@@ -1,0 +1,45 @@
+<nav class="navbar bg-body-tertiary navbar-dark bg-primary mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('landing_index') }}">
+            <div class="h1 m-0 fw-bold">Reviewal</div>
+        </a>
+        <a class="text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="mdi mdi-menu fs-2"></span>
+        </a>
+        <div class="offcanvas offcanvas-end bg-white text-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-bold text-black" id="offcanvasNavbarLabel">Menu</h5>
+                <button type="button" class="btn-close text-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link text-black fw-bold {{ app.request.get('_route') == 'landing_index' ? 'active' }}" aria-current="page" href="{{ path('landing_index') }}">{{ 'reviews'|trans|capitalize }}</a>
+                    </li>
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link text-black fw-bold {{ app.request.get('_route') == 'user_dashboard' ? 'active' }}" href="{{ path('user_dashboard') }}">{{ 'dashboard'|trans|capitalize }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black fw-bold {{ app.request.get('_route') == 'review_new' ? 'active' }}" href="{{ path('review_new') }}">{{ 'add-review'|trans|capitalize }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold text-danger" href="{{ path('app_logout') }}">{{ 'logout'|trans|capitalize }}</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link text-black fw-bold" href="{{ path('app_login') }}">{{ 'add-review'|trans|capitalize }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black fw-bold {{ app.request.get('_route') == 'app_login' ? 'active' }}" href="{{ path('app_login') }}">{{ 'login'|trans|capitalize }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black fw-bold {{ app.request.get('_route') == 'app_register' ? 'active' }}" href="{{ path('app_register') }}">{{ 'register'|trans|capitalize }}</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

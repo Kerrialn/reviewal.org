@@ -1,0 +1,31 @@
+<div aria-live="polite" aria-atomic="true" class="position-absolute z-index-9000 bottom-0 d-flex px-2 justify-content-start align-items-start w-100">
+    <div id="toast-container" class="toast-container">
+        {% for message in app.session.flashbag.get('error') %}
+            {{ include('partial/_toast.html.twig', {
+                message: message,
+                type: 'danger'
+            }) }}
+        {% endfor %}
+
+        {% for message in app.session.flashbag.get('info') %}
+            {{ include('partial/_toast.html.twig', {
+                message: message,
+                type: 'info'
+            }) }}
+        {% endfor %}
+
+        {% for message in app.session.flashbag.get('warning') %}
+            {{ include('partial/_toast.html.twig', {
+                message: message,
+                type: 'warning'
+            }) }}
+        {% endfor %}
+
+        {% for message in app.session.flashbag.get('success') %}
+            {{ include('partial/_toast.html.twig', {
+                message: message,
+                type: 'primary'
+            }) }}
+        {% endfor %}
+    </div>
+</div>

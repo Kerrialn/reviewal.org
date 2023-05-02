@@ -1,0 +1,7 @@
+{% macro rating(rating, size) %}
+    <span data-bs-toggle="tooltip" data-bs-placement="left" title="{{ rating|format_number }} / 5">
+        {% for i in range(0.5, 5) %}
+            <i class="mdi {{ loop.index > rating ? 'mdi-star text-muted' : 'mdi-star text-warning' }} {{ size }}"></i>
+        {% endfor %}
+    </span>
+{% endmacro %}
