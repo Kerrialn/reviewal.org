@@ -25,7 +25,7 @@ class AddressController extends AbstractController
     {
     }
 
-    #[Route('/{id}/show', name: 'address_show')]
+    #[Route('/show/{id}', name: 'address_show')]
     public function show(Address $address): Response
     {
         $averages = $this->reviewRepository->getAveragesByAddress($address);
