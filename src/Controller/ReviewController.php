@@ -40,13 +40,13 @@ class ReviewController extends AbstractController
         if ($addressFilterForm->isSubmitted() && $addressFilterForm->isValid()) {
             $addresses = $this->addressRepository->findByFilter($addressFilterForm->getData());
 
-            return $this->render('review/search.html.twig', [
+            return $this->render('review/index.html.twig', [
                 'addresses' => $addresses,
                 'addressFilterForm' => $addressFilterForm->createView()
             ]);
         }
 
-        return $this->render('review/search.html.twig', [
+        return $this->render('review/index.html.twig', [
             'addresses' => $addresses,
             'addressFilterForm' => $addressFilterForm->createView()
         ]);
