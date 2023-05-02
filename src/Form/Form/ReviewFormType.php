@@ -30,6 +30,12 @@ class ReviewFormType extends AbstractType
                     'class' => 'form-floating mb-3',
                 ]
             ])
+            ->add('durationOfStayInMonths', TextType::class, [
+                'label'=> $this->translator->trans('duration-of-stay-in-months'),
+                'row_attr' => [
+                    'class' => 'form-floating mb-3',
+                ]
+            ])
             ->add('buildingRating', RangeType::class, [
                 'help'=> $this->translator->trans('building-rating-explainer'),
                 'row_attr' => [

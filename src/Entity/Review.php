@@ -55,6 +55,9 @@ class Review
     #[ORM\ManyToOne(inversedBy: 'reviews')]
     private null|Address $address = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $durationOfStayInMonths = null;
+
     public function __construct()
     {
         $this->createdAt = new DateTimeImmutable();
@@ -242,6 +245,18 @@ class Review
     public function setTransportRating(?string $transportRating): void
     {
         $this->transportRating = $transportRating;
+    }
+
+    public function getDurationOfStayInMonths(): ?int
+    {
+        return $this->durationOfStayInMonths;
+    }
+
+    public function setDurationOfStayInMonths(?int $durationOfStayInMonths): self
+    {
+        $this->durationOfStayInMonths = $durationOfStayInMonths;
+
+        return $this;
     }
 
 }

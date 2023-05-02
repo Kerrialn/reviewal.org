@@ -240,12 +240,14 @@ class Address
         return $this;
     }
 
-    public function getMostRecentReviewAt(): DateTimeImmutable
+    public function getMostRecentReviewAt(): null|DateTimeImmutable
     {
         $criteria = Criteria::create()
             ->orderBy(['createdAt' => 'DESC'])
             ->setMaxResults(1);
-        return $this->getReviews()->matching($criteria)->first()->getCreatedAt();
+
+        $review = $this->getReviews()->matching($criteria)->first();
+        return $review ? $review->getCreatedAt() : null;
     }
 
 }

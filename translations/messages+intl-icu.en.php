@@ -45,4 +45,5 @@ return array (
   'transport-rating-average' => 'transport rating average',
   'number-of-reviews' => 'number of reviews',
   'address-created' => 'address created successfully',
+  'duration-of-stay-in-months' => 'Duration of stay in months',
 );

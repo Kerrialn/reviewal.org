@@ -45,7 +45,10 @@ class AddressRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('address');
 
-        $qb->innerJoin('address.reviews', 'review');
+        $qb->leftJoin('address.reviews', 'review');
+
+        $qb->andHaving($qb->expr()->gt($qb->expr()->count('review.id'), 0));
+        $qb->groupBy('address.id');
 
         if($addressFilterDto->getNameOrNumber())
         {
@@ -106,6 +109,7 @@ class AddressRepository extends ServiceEntityRepository
         if($isQuery){
             return $qb->getQuery();
         }
+
 
         return $qb->getQuery()->getResult();
     }
