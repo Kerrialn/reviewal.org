@@ -1,3 +1,11 @@
+index_redirect:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
+    defaults:
+        route: 'landing_index'
+        permanent: true
+        keepQueryParams: true
+        keepRequestMethod: true
 controllers:
     resource:
         path: ../src/Controller/
