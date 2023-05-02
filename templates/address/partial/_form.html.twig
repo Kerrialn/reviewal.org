@@ -1,11 +1,18 @@
 {{ form_start(addressForm) }}
 <div class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-9">
         {{ form_row(addressForm.nameOrNumber) }}
+    </div>
+    <div class="col-3">
+        {{ form_row(addressForm.floor) }}
+    </div>
+    <div class="col-12">
         {{ form_row(addressForm.postcode) }}
     </div>
-    <div class="col-12 col-md-6">
+    <div class="col-6">
         {{ form_row(addressForm.city) }}
+    </div>
+    <div class="col-6">
         {{ form_row(addressForm.county) }}
     </div>
     <div class="col-12">
@@ -15,6 +22,6 @@
     </div>
 </div>
 <div class="text-end">
-    <button type="submit" class="btn btn-primary">{{ 'save'|trans }}</button>
+    <button type="submit" class="btn btn-outline-primary">{{ 'save'|trans }}</button>
 </div>
 {{ form_end(addressForm) }}

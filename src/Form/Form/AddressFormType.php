@@ -5,6 +5,7 @@ namespace App\Form\Form;
 use App\Entity\Address;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -26,6 +27,15 @@ class AddressFormType extends AbstractType
                 'label'=> $this->translator->trans('address.name-or-number'),
                 'attr' => [
                     'placeholder' => $this->translator->trans('address.name-or-number'),
+                ],
+                'row_attr' => [
+                    'class' => 'form-floating mb-3',
+                ],
+            ])
+            ->add('floor', NumberType::class,[
+                'label'=> $this->translator->trans('address.floor'),
+                'attr' => [
+                    'placeholder' => $this->translator->trans('address.floor'),
                 ],
                 'row_attr' => [
                     'class' => 'form-floating mb-3',
