@@ -44,4 +44,5 @@ return array (
   'location-rating-average' => 'location rating average',
   'transport-rating-average' => 'transport rating average',
   'number-of-reviews' => 'number of reviews',
+  'address-created' => 'address created successfully',
 );

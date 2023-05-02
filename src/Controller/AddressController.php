@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 #[Route('/addresses')]
 class AddressController extends AbstractController
@@ -19,6 +20,7 @@ class AddressController extends AbstractController
     public function __construct(
         private readonly AddressRepository $addressRepository,
         private readonly ReviewRepository $reviewRepository,
+        private readonly TranslatorInterface $translator,
     )
     {
     }
@@ -42,7 +44,9 @@ class AddressController extends AbstractController
         $addressForm->handleRequest($request);
         if ($addressForm->isSubmitted() && $addressForm->isValid()) {
             $this->addressRepository->save($address, true);
-            return $this->redirectToRoute('address_new');
+
+            $this->addFlash('success', $this->translator->trans('address-created'));
+            return $this->redirectToRoute('review_new');
         }
 
         return $this->render('address/new.html.twig', [
