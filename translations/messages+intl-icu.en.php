@@ -38,13 +38,14 @@ return array(
     'last-reviewed' => 'last reviewed',
     'save' => 'save',
     'new-address' => 'new address',
-    'general-rating-average' => 'general rating average',
-    'building-rating-average' => 'building rating average',
-    'management-rating-average' => 'management rating average',
-    'location-rating-average' => 'location rating average',
-    'transport-rating-average' => 'transport rating average',
+    'general-rating-average' => 'general average',
+    'building-rating-average' => 'building average',
+    'management-rating-average' => 'management average',
+    'location-rating-average' => 'location average',
+    'transport-rating-average' => 'transport average',
     'number-of-reviews' => 'number of reviews',
     'address-created' => 'address created successfully',
     'duration-of-stay-in-months' => 'Duration of stay in months',
-    'reviewal-intro-explainer' => 'The place for long term rental reviews.'
+    'reviewal-intro-explainer' => 'The place for long term rental reviews.',
+    'write-review' => 'write review'
 );

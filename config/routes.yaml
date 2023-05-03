@@ -7,7 +7,10 @@ index_redirect:
         keepQueryParams: true
         keepRequestMethod: true
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+    resource: ../src/Controller/
+    type: annotation
+    prefix: /{_locale}
+    defaults:
+        _locale: en
+    requirements:
+        _locale: '[a-z]{2}'
