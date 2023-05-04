@@ -39,6 +39,7 @@ return array(
     'save' => 'save',
     'new-address' => 'new address',
     'general-rating-average' => 'general average',
+    'price-rating-average' => 'price average',
     'building-rating-average' => 'building average',
     'management-rating-average' => 'management average',
     'location-rating-average' => 'location average',

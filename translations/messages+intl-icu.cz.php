@@ -39,6 +39,7 @@ return array(
     'save' => 'uložit',
     'new-address' => 'nová adresa',
     'general-rating-average' => 'průměr obecného hodnocení',
+    'price-rating-average' => 'průměrná cena',
     'building-rating-average' => 'průměr hodnocení budovy',
     'management-rating-average' => 'průměr hodnocení správy',
     'location-rating-average' => 'průměr hodnocení lokality',
