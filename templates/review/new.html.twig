@@ -8,15 +8,19 @@
             <div class="col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        {{ 'new-review'|trans }}
+                        <div class="h5 fw-bold m-0">{{ 'new-review'|trans }}</div>
                     </div>
                     <div class="card-body">
                         {{ form_start(reviewForm) }}
+                        {{ form_row(reviewForm.address) }}
+                        <div class="mb-4">
+                        <a href="{{ path('address_new') }}">{{ 'can-not-find-address'|trans }}</a>
+                        </div>
                         <div class="row">
-                            <div class="col-8">
+                            <div class="col-6">
                                 {{ form_row(reviewForm.title) }}
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 {{ form_row(reviewForm.durationOfStayInMonths) }}
                             </div>
                         </div>
@@ -46,8 +50,6 @@
                             <div class="mdi mdi-heart fs-3"></div>
                         </div>
                         {{ form_row(reviewForm.explanation) }}
-                        {{ form_row(reviewForm.address) }}
-                        <a href="{{ path('address_new') }}">{{ 'can-not-find-address'|trans }}</a>
                         <div class="text-end">
                             <button type="submit" class="btn btn-primary">{{ 'create'|trans }}</button>
                         </div>

@@ -100,7 +100,11 @@ class ReviewFormType extends AbstractType
                     'class' => 'form-floating mb-3',
                 ]
             ])
-            ->add('address', AddressAutocompleteField::class);
+            ->add('address', AddressAutocompleteField::class, [
+                'row_attr' => [
+                    'class' => 'm-0'
+                ]
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

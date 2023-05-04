@@ -1,0 +1,9 @@
+{% macro address(address) %}
+    {{ address.nameOrNumber }},
+    {{ 'floor'|trans }} {{ address.floor }},
+    {{ address.lineOne }},
+    {{ address.lineTwo ? address.lineTwo ~ ',' }}
+    {{ address.postcode }},
+    {{ address.county ? address.county  ~ ',' }}
+    {{ address.country|country_name }}
+{% endmacro %}
