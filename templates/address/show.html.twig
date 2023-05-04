@@ -34,6 +34,13 @@
                             </div>
                             <div
                                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <div class="h5 m-0 fw-bold">{{ 'price-rating-average'|trans }}</div>
+                                <div class="lh-1">
+                                    {{ reviewMacro.rating(averages.priceRatingAverage, 'fs-3') }}
+                                </div>
+                            </div>
+                            <div
+                                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                 <div class="h5 m-0 fw-bold">{{ 'management-rating-average'|trans }}</div>
                                 <div class="lh-1">
                                     {{ reviewMacro.rating(averages.managementRatingAverage, 'fs-3') }}
@@ -98,6 +105,11 @@
                                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
                                             <div>{{ 'building-rating'|trans }}</div>
                                             <div>{{ reviewMacro.rating(review.buildingRating) }}</div>
+                                        </div>
+                                        <div
+                                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>{{ 'price-rating'|trans }}</div>
+                                            <div>{{ reviewMacro.rating(review.priceRating) }}</div>
                                         </div>
                                         <div
                                             class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
