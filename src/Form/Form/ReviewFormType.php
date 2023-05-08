@@ -96,6 +96,9 @@ class ReviewFormType extends AbstractType
                 ]
             ])
             ->add('explanation', TextareaType::class, [
+                'attr' => [
+                    'data-controller' => 'textarea-autogrow'
+                ],
                 'row_attr' => [
                     'class' => 'form-floating mb-3',
                 ]

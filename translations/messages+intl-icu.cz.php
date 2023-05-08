@@ -44,6 +44,8 @@ return array(
     'management-rating-average' => 'průměr hodnocení správy',
     'location-rating-average' => 'průměr hodnocení lokality',
     'transport-rating-average' => 'průměr hodnocení dopravy',
+    'review-data-information-header'=> 'Jak se tyto údaje používají?',
+    'review-data-information-content'=> 'Nemějte obavy, v recenzi neuvedeme vaše jméno a zobrazíme pouze datum poslední aktualizace recenze. Usilujeme však o nestrannost, proto pomluva není tolerována a může dojít k právním krokům, proto buďte upřímní a připraveni podložit jakákoli tvrzení důkazy.',
     'number-of-reviews' => 'počet recenzí',
     'address-created' => 'adresa úspěšně vytvořena',
     'duration-of-stay-in-months' => 'délka pobytu v měsících',

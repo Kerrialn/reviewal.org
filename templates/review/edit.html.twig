@@ -1,22 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}new address{% endblock %}
+{% block title %}edit address{% endblock %}
 
 {% block body %}
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-3">
-                <div class="card">
-                    <div class="card-header">{{ 'review-data-information-header'|trans }}</div>
-                    <div class="card-body">
-                        {{ 'review-data-information-content'|trans }}
-                    </div>
-                </div>
-            </div>
             <div class="col-12 col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <div class="h5 fw-bold m-0">{{ 'new-review'|trans }}</div>
+                        <div class="h5 fw-bold m-0">{{ 'edit-review'|trans }}</div>
                     </div>
                     <div class="card-body">
                         {{ form_start(reviewForm) }}
@@ -59,7 +51,7 @@
                         </div>
                         {{ form_row(reviewForm.explanation) }}
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary">{{ 'create'|trans }}</button>
+                            <button type="submit" class="btn btn-primary">{{ 'save'|trans }}</button>
                         </div>
                         {{ form_end(reviewForm) }}
                     </div>

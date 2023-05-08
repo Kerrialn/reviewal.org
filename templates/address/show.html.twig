@@ -131,10 +131,10 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            {{ review.explanation }}
+                            {{ review.explanation|nl2br }}
                         </div>
                         <div class="card-footer text-center text-muted">
-                            {{ review.updatedAt|date('M Y') }}
+                           last updated: {{ review.updatedAt|date('M Y') }}
                         </div>
                     </div>
                 {% endfor %}

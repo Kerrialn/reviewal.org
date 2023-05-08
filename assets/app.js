@@ -45,9 +45,7 @@ document.addEventListener('turbo:load', function (e) {
   let tabTrigger = new Tab($('.nav-link[href="' + selectedTab + '"]:first'));
   tabTrigger.show();
 });
-
 document.addEventListener('turbo:load', function (e) {
   const toastElList = document.querySelectorAll('.toast')
   const toastList = [...toastElList].map(toastEl => new Toast(toastEl, option));
 });
-
